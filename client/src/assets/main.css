@@ -1,4 +1,4 @@
-@import url("./whitespace-reset.css");
+/* @import url("./whitespace-reset.css"); */
 @import url("https://fonts.googleapis.com/css?family=Rammetto+One%7CRoboto+Condensed");
 
 body {
@@ -95,6 +95,7 @@ li {
 
 button {
   padding: 5px 12px 5px;
+  margin: 5px;
   background: #07575b;
   color: #fff;
   border-color: transparent;
@@ -168,27 +169,10 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.add-form h3 {
-  display: block;
-}
-
-.add-product-button {
-  display: block;
-}
-
-/* .add-form h3,
-.add-form form {
-  display: none;
-}
-
-.add-form.visible .add-product-button {
-  display: none;
-}
-
 .add-form.visible h3,
 .add-form.visible form {
   display: block;
-} */
+}
 
 table td,
 th {
