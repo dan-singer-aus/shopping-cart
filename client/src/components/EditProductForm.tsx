@@ -30,7 +30,7 @@ export const EditProductForm = ({
   return (
     <div className="edit-form">
       <h3>Edit Product</h3>
-      <form onSubmit={handleSubmit}>
+      <form aria-label="edit a product" onSubmit={handleSubmit}>
         <FormInputs
           title={title}
           quantity={quantity}
