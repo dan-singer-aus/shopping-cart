@@ -56,6 +56,7 @@ export const ProductDisplay = ({
       <p className="quantity">{productDetails.quantity} left in stock</p>
       {isVisible ? displayEditForm() : displayActions()}
       <button
+        aria-label="delete"
         className="delete-button"
         onClick={() => handleDeleteProduct(productDetails._id)}
       >

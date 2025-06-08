@@ -9,7 +9,7 @@ interface CartProps {
 export const Cart = ({ cartItems, handleCheckout }: CartProps) => {
   const emptyCartDisplay = () => (
     <>
-      <p>cart is empty</p>
+      <p>Your cart is empty</p>
       <button className="checkout" disabled>
         Checkout
       </button>

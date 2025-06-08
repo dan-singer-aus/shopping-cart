@@ -26,7 +26,7 @@ export const AddProductForm = ({
 
   return (
     <div className="add-form">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} aria-label="add a product">
         <FormInputs
           title={title}
           quantity={quantity}
