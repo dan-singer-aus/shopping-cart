@@ -115,16 +115,16 @@ const App = () => {
     <>
       <header>
         <h1>The Shop!</h1>
-        <Cart cartItems={cartItems} handleCheckout={handleCheckout} />
+        <Cart cartItems={cartItems} onCheckout={handleCheckout} />
       </header>
       <main>
         <ProductListing
           products={products}
-          handleEditProduct={handleEditProduct}
-          handleDeleteProduct={handleDeleteProduct}
-          handleAddToCart={handleAddToCart}
+          onEditProduct={handleEditProduct}
+          onDeleteProduct={handleDeleteProduct}
+          onAddToCart={handleAddToCart}
         />
-        <ToggleableAddProductForm handleAddNewProduct={handleAddNewProduct} />
+        <ToggleableAddProductForm onAddNewProduct={handleAddNewProduct} />
       </main>
     </>
   );

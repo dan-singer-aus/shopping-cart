@@ -3,16 +3,16 @@ import { ProductDisplay } from "./ProductDisplay";
 
 interface ProductListingProps {
   products: Product[];
-  handleEditProduct: (product: Product) => Promise<void>;
-  handleDeleteProduct: (productId: string) => Promise<void>;
-  handleAddToCart: (productId: string) => Promise<void>;
+  onEditProduct: (product: Product) => Promise<void>;
+  onDeleteProduct: (productId: string) => Promise<void>;
+  onAddToCart: (productId: string) => Promise<void>;
 }
 
 export const ProductListing = ({
   products,
-  handleEditProduct,
-  handleDeleteProduct,
-  handleAddToCart,
+  onEditProduct,
+  onDeleteProduct,
+  onAddToCart,
 }: ProductListingProps) => {
   return (
     <div className="product-listing">
@@ -23,9 +23,9 @@ export const ProductListing = ({
             <div className="product-details">
               <ProductDisplay
                 productDetails={product}
-                handleEditProduct={handleEditProduct}
-                handleDeleteProduct={handleDeleteProduct}
-                handleAddToCart={handleAddToCart}
+                onEditProduct={onEditProduct}
+                onDeleteProduct={onDeleteProduct}
+                onAddToCart={onAddToCart}
               />
             </div>
           </li>

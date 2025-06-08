@@ -1,17 +1,11 @@
 import type { CartItem } from "../types";
+import utils from "../utils";
 
 interface CartTableProps {
   cartItems: CartItem[];
 }
 
 export const CartTable = ({ cartItems }: CartTableProps) => {
-  const calculateCartTotal = () => {
-    return cartItems.reduce(
-      (total, current) =>
-        total + Number(current.price) * Number(current.quantity),
-      0
-    );
-  };
   return (
     <table className="cart-items">
       <thead>
@@ -35,7 +29,7 @@ export const CartTable = ({ cartItems }: CartTableProps) => {
       <tfoot>
         <tr>
           <td colSpan={3} className="total">
-            Total: ${calculateCartTotal().toFixed(2)}
+            Total: ${utils.calculateCartTotal(cartItems).toFixed(2)}
           </td>
         </tr>
       </tfoot>

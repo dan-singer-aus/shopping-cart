@@ -4,7 +4,7 @@ import { FormInputs } from "./FormInputs";
 
 interface AddProductFormProps {
   toggleVisibility: () => void;
-  handleAddNewProduct: (
+  onAddNewProduct: (
     ProductInput: ProductInput,
     callback?: () => void
   ) => Promise<void>;
@@ -12,7 +12,7 @@ interface AddProductFormProps {
 
 export const AddProductForm = ({
   toggleVisibility,
-  handleAddNewProduct,
+  onAddNewProduct,
 }: AddProductFormProps) => {
   const [title, setTitle] = React.useState("");
   const [quantity, setQuantity] = React.useState(0);
@@ -21,7 +21,7 @@ export const AddProductForm = ({
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     const productInput: ProductInput = { title, quantity, price };
-    await handleAddNewProduct(productInput, toggleVisibility);
+    await onAddNewProduct(productInput, toggleVisibility);
   };
 
   return (
