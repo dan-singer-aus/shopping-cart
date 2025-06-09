@@ -3,18 +3,18 @@ import { useState } from "react";
 import { AddProductForm } from "./AddProductForm";
 
 interface ToggleAddProductFormProps {
-  handleAddNewProduct: (ProductInput: ProductInput) => Promise<void>;
+  onAddNewProduct: (ProductInput: ProductInput) => Promise<void>;
 }
 
 export const ToggleableAddProductForm = ({
-  handleAddNewProduct,
+  onAddNewProduct,
 }: ToggleAddProductFormProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible((currentState) => !currentState);
 
   const displayAddProductForm = () => (
     <AddProductForm
-      handleAddNewProduct={handleAddNewProduct}
+      onAddNewProduct={onAddNewProduct}
       toggleVisibility={toggleVisibility}
     />
   );

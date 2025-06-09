@@ -4,34 +4,34 @@ import { EditProductForm } from "./EditProductForm";
 
 interface ProductDisplayProps {
   productDetails: Product;
-  handleEditProduct: (product: Product) => Promise<void>;
-  handleDeleteProduct: (productId: string) => Promise<void>;
-  handleAddToCart: (productId: string) => Promise<void>;
+  onEditProduct: (product: Product) => Promise<void>;
+  onDeleteProduct: (productId: string) => Promise<void>;
+  onAddToCart: (productId: string) => Promise<void>;
 }
 
 export const ProductDisplay = ({
   productDetails,
-  handleEditProduct,
-  handleDeleteProduct,
-  handleAddToCart,
+  onEditProduct,
+  onDeleteProduct,
+  onAddToCart,
 }: ProductDisplayProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const toggleEditFormVisibility = () =>
     setIsVisible((currentState) => !currentState);
 
-  const onAddToCart = (event: React.MouseEvent) => {
+  const handleAddToCartClick = (event: React.MouseEvent) => {
     event.preventDefault();
     if (productDetails.quantity === 0) {
       alert("No Products left");
     } else {
-      handleAddToCart(productDetails._id);
+      onAddToCart(productDetails._id);
     }
   };
 
   const displayActions = () => {
     return (
       <div className="actions product-actions">
-        <button className="add-to-cart" onClick={onAddToCart}>
+        <button className="add-to-cart" onClick={handleAddToCartClick}>
           Add to Cart
         </button>
         <button className="edit" onClick={toggleEditFormVisibility}>
@@ -44,7 +44,7 @@ export const ProductDisplay = ({
   const displayEditForm = () => (
     <EditProductForm
       productDetails={productDetails}
-      handleEditProduct={handleEditProduct}
+      onEditProduct={onEditProduct}
       toggleEditFormVisibility={toggleEditFormVisibility}
     />
   );
@@ -58,7 +58,7 @@ export const ProductDisplay = ({
       <button
         aria-label="delete"
         className="delete-button"
-        onClick={() => handleDeleteProduct(productDetails._id)}
+        onClick={() => onDeleteProduct(productDetails._id)}
       >
         <span>X</span>
       </button>

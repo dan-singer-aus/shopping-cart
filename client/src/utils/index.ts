@@ -39,4 +39,12 @@ const cartStateUpdater = (
   });
 };
 
-export default { productStateUpdater, cartStateUpdater };
+const calculateCartTotal = (cartItems: CartItem[]) => {
+  return cartItems.reduce(
+    (total, current) =>
+      total + Number(current.price) * Number(current.quantity),
+    0
+  );
+};
+
+export default { productStateUpdater, cartStateUpdater, calculateCartTotal };

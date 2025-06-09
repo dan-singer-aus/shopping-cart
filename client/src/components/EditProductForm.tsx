@@ -4,12 +4,12 @@ import { FormInputs } from "./FormInputs";
 
 interface EditProductFormProps {
   productDetails: Product;
-  handleEditProduct: (product: Product, callback?: () => void) => Promise<void>;
+  onEditProduct: (product: Product, callback?: () => void) => Promise<void>;
   toggleEditFormVisibility: () => void;
 }
 export const EditProductForm = ({
   productDetails,
-  handleEditProduct,
+  onEditProduct,
   toggleEditFormVisibility,
 }: EditProductFormProps) => {
   const [title, setTitle] = React.useState(productDetails.title);
@@ -24,7 +24,7 @@ export const EditProductForm = ({
       quantity,
       price,
     };
-    await handleEditProduct(amendedProduct, toggleEditFormVisibility);
+    await onEditProduct(amendedProduct, toggleEditFormVisibility);
   };
 
   return (

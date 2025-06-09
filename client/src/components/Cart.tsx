@@ -3,10 +3,10 @@ import { CartTable } from "./CartTable";
 
 interface CartProps {
   cartItems: CartItem[];
-  handleCheckout: () => Promise<void>;
+  onCheckout: () => Promise<void>;
 }
 
-export const Cart = ({ cartItems, handleCheckout }: CartProps) => {
+export const Cart = ({ cartItems, onCheckout }: CartProps) => {
   const emptyCartDisplay = () => (
     <>
       <p>Your cart is empty</p>
@@ -19,7 +19,7 @@ export const Cart = ({ cartItems, handleCheckout }: CartProps) => {
   const populatedCartDisplay = () => (
     <>
       <CartTable cartItems={cartItems} />
-      <button className="checkout" onClick={() => handleCheckout()}>
+      <button className="checkout" onClick={() => onCheckout()}>
         Checkout
       </button>
     </>
